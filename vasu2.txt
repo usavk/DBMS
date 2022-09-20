@@ -1,0 +1,84 @@
+
+                      experiment 2
+
+
+1). mysql> use student;
+Database changed
+mysql> Alter table student add primary key(regno);
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| regno    | int      | NO   | PRI | NULL    |       |
+| name     | char(20) | YES  |     | NULL    |       |
+| gender   | char(1)  | YES  |     | NULL    |       |
+| dob      | int      | YES  |     | NULL    |       |
+| mobileno | int      | YES  |     | NULL    |       |
+| city     | char(10) | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+2). mysql> use facaulty;
+Database changed
+mysql> Alter table facaulty add primary key(facno);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+mysql> Alter table facaulty add check(gender='m'or'f');
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+mysql> desc facaulty;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| facno    | char(4)  | NO   | PRI | NULL    |       |
+| facname  | char(15) | YES  |     | NULL    |       |
+| gender   | char(1)  | YES  |     | NULL    |       |
+| DOB      | int      | YES  |     | NULL    |       |
+| DOJ      | int      | YES  |     | NULL    |       |
+| mobileno | int      | YES  |     | NULL    |       |
+| deptno   | char(4)  | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+4). mysql> use department;
+Database changed
+ mysql> alter table department add primary key(depno);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc department;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| depno    | char(4)  | NO   | PRI | NULL    |       |
+| deptname | char(15) | YES  |     | NULL    |       |
+| depthead | char(4)  | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+
+5).  mysql> use course;
+Database changed
+mysql> Alter table course ADD primary key(courseno);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+mysql> alter table course add check(semno>=1&&semno<=6);
+Query OK, 0 rows affected, 1 warning (0.18 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> desc course;
++------------+----------+------+-----+---------+-------+
+| Field      | Type     | Null | Key | Default | Extra |
++------------+----------+------+-----+---------+-------+
+| courseno   | char(3)  | NO   | PRI | NULL    |       |
+| coursedesc | char(14) | YES  |     | NULL    |       |
+| coursetype | char(1)  | YES  |     | NULL    |       |
+| semno      | char(1)  | YES  |     | NULL    |       |
+| hallno     | char(4)  | YES  |     | NULL    |       |
+| facno      | char(4)  | YES  |     | NULL    |       |
++------------+----------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
