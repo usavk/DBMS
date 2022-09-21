@@ -1,0 +1,236 @@
+
+   experiment 3:
+
+1a).
+
+table 1:
+
+mysql> use vasu;
+Database changed
+mysql> create table stdet(regno int(20),name char(15),gender char(1),dob date,mobileno int(11),city char(15));
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+mysql> insert into stdet values(1922256453,'ram','m','2000-7-23',53675676,'chennai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into stdet values(1922256443,'vasu','m','2002-02-13',53675686,'ap');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into stdet values(1922256233,'pepsi','f','2000-7-13',5367546,'vyasarpadi');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>
+mysql> select*from stdet;
++------------+-------+--------+------------+----------+------------+
+| regno      | name  | gender | dob        | mobileno | city       |
++------------+-------+--------+------------+----------+------------+
+| 1922256453 | ram   | m      | 2000-07-23 | 53675676 | chennai    |
+| 1922256443 | vasu  | m      | 2002-02-13 | 53675686 | ap         |
+| 1922256233 | pepsi | f      | 2000-07-13 |  5367546 | vyasarpadi |
++------------+-------+--------+------------+----------+------------+
+3 rows in set (0.01 sec)
+
+table 2:
+
+mysql> create table facalty(fname char(8),age int(3),status char(15));
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+mysql> insert into facalty values('vasu',27,'resigned');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into facalty values('pepsi',34,'ntresigned');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into facalty values('usav',47,'resigned');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into facalty values('ahsiya',56,'resigned');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from facalty;
++--------+------+------------+
+| fname  | age  | status     |
++--------+------+------------+
+| vasu   |   27 | resigned   |
+| pepsi  |   34 | ntresigned |
+| usav   |   47 | resigned   |
+| ahsiya |   56 | resigned   |
++--------+------+------------+
+4 rows in set (0.00 sec)
+
+table 3:
+
+mysql> create table fac;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table fac(name char(10),dob date);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> insert into fac values('ram','1983-05-01');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into fac values('vasu','2003-05-02');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into fac values('pepsi','2000-05-01');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from fac;
++-------+------------+
+| name  | dob        |
++-------+------------+
+| ram   | 1983-05-01 |
+| vasu  | 2003-05-02 |
+| pepsi | 2000-05-01 |
++-------+------------+
+3 rows in set (0.00 sec)
+
+table 4:
+
+mysql> create table fa;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table fa(name char(10),age int(2));
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> insert into fa values('vasu',78);
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  insert into fa values('pepsi',99);
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  insert into fa values('cripsy',34);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from fa;
++--------+------+
+| name   | age  |
++--------+------+
+| vasu   |   78 |
+| pepsi  |   99 |
+| cripsy |   34 |
++--------+------+
+3 rows in set (0.00 sec)
+
+2).
+
++------------+-------+--------+------------+----------+------------+
+| regno      | name  | gender | dob        | mobileno | city       |
++------------+-------+--------+------------+----------+------------+
+| 1922256453 | ram   | m      | 2000-07-23 | 53675676 | chennai    |
+| 1922256443 | vasu  | m      | 2002-02-13 | 53675686 | ap         |
+| 1922256233 | pepsi | f      | 2000-07-13 |  5367546 | vyasarpadi |
+|  191711342 | pesi  | f      | 2000-07-03 |    53676 | vyasari    |
++------------+-------+--------+------------+----------+------------+
+
+a).
+
+mysql> update stdet set name='monster' where regno=191711342;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from stdet;
++------------+---------+--------+------------+----------+------------+
+| regno      | name    | gender | dob        | mobileno | city       |
++------------+---------+--------+------------+----------+------------+
+| 1922256453 | ram     | m      | 2000-07-23 | 53675676 | chennai    |
+| 1922256443 | vasu    | m      | 2002-02-13 | 53675686 | ap         |
+| 1922256233 | pepsi   | f      | 2000-07-13 |  5367546 | vyasarpadi |
+|  191711342 | monster | f      | 2000-07-03 |    53676 | vyasari    |
++------------+---------+--------+------------+----------+------------+
+4 rows in set (0.00 sec)
+
+3).
+
++--------+------+------------+
+| fname  | age  | status     |
++--------+------+------------+
+| vasu   |   27 | resigned   |
+| pepsi  |   34 | ntresigned |
+| usav   |   47 | resigned   |
+| ahsiya |   56 | resigned   |
++--------+------+------------+
+a).
+
+mysql> delete from facalty where status='resigned';
+Query OK, 3 rows affected (0.01 sec)
+
+mysql> select*from facalty;
++-------+------+------------+
+| fname | age  | status     |
++-------+------+------------+
+| pepsi |   34 | ntresigned |
++-------+------+------------+
+1 row in set (0.00 sec)
+
+4).
+
++-------+------------+
+| name  | dob        |
++-------+------------+
+| ram   | 1900-05-02 |
+| vasu  | 2003-05-02 |
+| pepsi | 2000-05-01 |
++-------+------------+
+
+a).
+
+mysql> update fac set dob='1983-05-01' where name='ram';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from fac;
++-------+------------+
+| name  | dob        |
++-------+------------+
+| ram   | 1983-05-01 |
+| vasu  | 2003-05-02 |
+| pepsi | 2000-05-01 |
++-------+------------+
+3 rows in set (0.00 sec)
+
+5).
+
++--------+------+
+| name   | age  |
++--------+------+
+| vasu   |   78 |
+| pepsi  |   99 |
+| cripsy |   34 |
++--------+------+
+a).
+
+mysql> delete from fa where age>65;
+Query OK, 2 rows affected (0.01 sec)
+
+mysql> select*from fa;
++--------+------+
+| name   | age  |
++--------+------+
+| cripsy |   34 |
++--------+------+
+1 row in set (0.00 sec)
+
+6a).
+mysql> select*from fa,fac,facalty,stdet;
++--------+------+-------+------------+-------+------+------------+------------+---------+--------+------------+----------+------------+
+| name   | age  | name  | dob        | fname | age  | status     | regno      | name    | gender | dob        | mobileno | city       |
++--------+------+-------+------------+-------+------+------------+------------+---------+--------+------------+----------+------------+
+| cripsy |   34 | pepsi | 2000-05-01 | pepsi |   34 | ntresigned | 1922256453 | ram     | m      | 2000-07-23 | 53675676 | chennai    |
+| cripsy |   34 | vasu  | 2003-05-02 | pepsi |   34 | ntresigned | 1922256453 | ram     | m      | 2000-07-23 | 53675676 | chennai    |
+| cripsy |   34 | ram   | 1983-05-02 | pepsi |   34 | ntresigned | 1922256453 | ram     | m      | 2000-07-23 | 53675676 | chennai    |
+| cripsy |   34 | pepsi | 2000-05-01 | pepsi |   34 | ntresigned | 1922256443 | vasu    | m      | 2002-02-13 | 53675686 | ap         |
+| cripsy |   34 | vasu  | 2003-05-02 | pepsi |   34 | ntresigned | 1922256443 | vasu    | m      | 2002-02-13 | 53675686 | ap         |
+| cripsy |   34 | ram   | 1983-05-02 | pepsi |   34 | ntresigned | 1922256443 | vasu    | m      | 2002-02-13 | 53675686 | ap         |
+| cripsy |   34 | pepsi | 2000-05-01 | pepsi |   34 | ntresigned | 1922256233 | pepsi   | f      | 2000-07-13 |  5367546 | vyasarpadi |
+| cripsy |   34 | vasu  | 2003-05-02 | pepsi |   34 | ntresigned | 1922256233 | pepsi   | f      | 2000-07-13 |  5367546 | vyasarpadi |
+| cripsy |   34 | ram   | 1983-05-02 | pepsi |   34 | ntresigned | 1922256233 | pepsi   | f      | 2000-07-13 |  5367546 | vyasarpadi |
+| cripsy |   34 | pepsi | 2000-05-01 | pepsi |   34 | ntresigned |  191711342 | monster | f      | 2000-07-03 |    53676 | vyasari    |
+| cripsy |   34 | vasu  | 2003-05-02 | pepsi |   34 | ntresigned |  191711342 | monster | f      | 2000-07-03 |    53676 | vyasari    |
+| cripsy |   34 | ram   | 1983-05-02 | pepsi |   34 | ntresigned |  191711342 | monster | f      | 2000-07-03 |    53676 | vyasari    |
++--------+------+-------+------------+-------+------+------------+------------+---------+--------+------------+----------+------------+
+12 rows in set (0.01 sec)
+
+
+
+
+
+
+
