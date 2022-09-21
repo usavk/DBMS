@@ -1,0 +1,233 @@
+
+
+
+
+1).
++------------+---------+--------+------------+----------+------------+
+| regno      | name    | gender | dob        | mobileno | city       |
++------------+---------+--------+------------+----------+------------+
+| 1922256453 | ram     | m      | 2000-07-23 | 53675676 | chennai    |
+| 1922256443 | vasu    | m      | 2002-02-13 | 53675686 | ap         |
+| 1922256233 | pepsi   | f      | 2000-07-13 |  5367546 | vyasarpadi |
+|  191711342 | monster | f      | 2000-07-03 |    53676 | vyasari    |
++------------+---------+--------+------------+----------+------------+
+
+a).
+
+mysql> use vasu;
+Database changed
+mysql> select regno,name,dob from stdet;
++------------+---------+------------+
+| regno      | name    | dob        |
++------------+---------+------------+
+| 1922256453 | ram     | 2000-07-23 |
+| 1922256443 | vasu    | 2002-02-13 |
+| 1922256233 | pepsi   | 2000-07-13 |
+|  191711342 | monster | 2000-07-03 |
++------------+---------+------------+
+4 rows in set (0.00 sec)
+
+
+2).
++------------+---------+--------+------------+----------+------------+
+| regno      | name    | gender | dob        | mobileno | city       |
++------------+---------+--------+------------+----------+------------+
+| 1922256453 | ram     | m      | 2000-07-23 | 53675676 | chennai    |
+| 1922256443 | vasu    | m      | 2002-02-13 | 53675686 | ap         |
+| 1922256233 | pepsi   | f      | 2000-07-13 |  5367546 | vyasarpadi |
+|  191711342 | monster | f      | 2000-07-03 |    53676 | vyasari    |
++------------+---------+--------+------------+----------+------------+
+
+a).
+
+mysql> select name from stdet where gender='f';
++---------+
+| name    |
++---------+
+| pepsi   |
+| monster |
++---------+
+
+3).
+
++-------+--------+------+
+| name  | gender | code |
++-------+--------+------+
+| vasu  | m      | C001 |
+| pepsi | f      | C002 |
+| john  | m      | C004 |
+| abhi  | m      | C005 |
++-------+--------+------+
+
+a).
+mysql> select*from s where code='C001',gender='m';
++------+--------+------+
+| name | gender | code |
++------+--------+------+
+| vasu | m      | C001 |
++------+--------+------+
+
+4)
+
+.+------+------+------------+
+| name | age  | joindate   |
++------+------+------------+
+| vasu |   45 | 2014-10-12 |
+| joy  |   35 | 2014-12-12 |
+| vasu |   45 | 2014-10-24 |
+| toy  |   54 | 2016-10-12 |
++------+------+------------+
+4 rows in set (0.00 sec)
+
+a).
+
+mysql> select*from f where joindate>2014-11-01;
++------+------+------------+
+| name | age  | joindate   |
++------+------+------------+
+| vasu |   45 | 2014-10-12 |
+| joy  |   35 | 2014-12-12 |
+| vasu |   45 | 2014-10-24 |
+|      |      |            |
++------+------+------------+
+
+5)
+
++---------+------------+
+| cname   | hall       |
++---------+------------+
+| maths   | alloted    |
+| science | notalloted |
+| python  | notalloted |
+| c       | alloted    |
+| java    | notalloted |
++---------+------------+
+
+a).
+mysql> select*from corse where hall='notalloted';
++---------+------------+
+| cname   | hall       |
++---------+------------+
+| science | notalloted |
+| python  | notalloted |
+| java    | notalloted |
++---------+------------+
+
+
+6).
+
++---------+---------+-------+
+| name    | city    | class |
++---------+---------+-------+
+| samanth | parsal  |     4 |
+| sushma  | chennai |     8 |
+| thanma  | nagsal  |     1 |
+| mathuri | salar   |     3 |
++---------+---------+-------+
+
+a).
+
+mysql> select*from city where name like '%ma';
++--------+---------+-------+
+| name   | city    | class |
++--------+---------+-------+
+| sushma | chennai |     8 |
+| thanma | nagsal  |     1 |
++--------+---------+-------+
+
+7).
+
++---------+---------+-------+
+| name    | city    | class |
++---------+---------+-------+
+| samanth | parsal  |     4 |
+| sushma  | chennai |     8 |
+| thanma  | nagsal  |     1 |
+| mathuri | salar   |     3 |
++---------+---------+-------+
+
+a).
+
+mysql>  select*from city where name like '%ma';
++--------+---------+-------+
+| name   | city    | class |
++--------+---------+-------+
+| sushma | chennai |     8 |
+| thanma | nagsal  |     1 |
++--------+---------+-------+
+
+8).
+  +---------+---------+-------+
+| name    | city    | class |
++---------+---------+-------+
+| samanth | parsal  |     4 |
+| sushma  | chennai |     8 |
+| thanma  | nagsal  |     1 |
+| mathuri | salar   |     3 |
++---------+---------+-------+
+
+
+a).
+
+mysql>  select*from city where city like '%sal';
++---------+--------+-------+
+| name    | city   | class |
++---------+--------+-------+
+| samanth | parsal |     4 |
+| thanma  | nagsal |     1 |
++---------+--------+-------+
+
+9).
+
++---------+---------+-------+
+| name    | city    | class |
++---------+---------+-------+
+| samanth | parsal  |     4 |
+| sushma  | chennai |     8 |
+| thanma  | nagsal  |     1 |
+| mathuri | salar   |     3 |
++---------+---------+-------+
+
+a).
+
+mysql>  select*from city where city like '______';
++---------+--------+-------+
+| name    | city   | class |
++---------+--------+-------+
+| samanth | parsal |     4 |
+| thanma  | nagsal |     1 |
++---------+--------+-------+
+
+10).
+
++---------+---------+-------+
+| name    | city    | class |
++---------+---------+-------+
+| samanth | parsal  |     4 |
+| sushma  | chennai |     8 |
+| thanma  | nagsal  |     1 |
+| mathuri | salar   |     3 |
++---------+---------+-------+
+
+a).
+
+mysql>  select*from city where name like '%th%';
++---------+--------+-------+
+| name    | city   | class |
++---------+--------+-------+
+| samanth | parsal |     4 |
+| thanma  | nagsal |     1 |
+| mathuri | salar  |     3 |
++---------+--------+-------+
+
+
+
+
+
+
+
+
+
+
+
+
