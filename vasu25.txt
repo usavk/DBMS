@@ -1,0 +1,33 @@
+
+   experiment 25:
+
+1a).
+
+mysql> create table stuprog(sno int(2),name char(10),age int(2),model1 int(2),model2 int(2),sem int(2),otherevents char(19));
+Query OK, 0 rows affected, 5 warnings (0.03 sec)
+
+mysql>  insert into stuprog values(1,'vasu',19,99,98,99,'singing');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into stuprog values(2,'roman',22,98,76,45,'none');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into stuprog values(3,'sinchan',20,86,88,89,'coding');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  insert into stuprog values(4,'doremon',34,76,56,34,'dancing');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into stuprog values(5,'pinky',19,99,98,99,'none');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from stuprog;
++------+---------+------+--------+--------+------+-------------+
+| sno  | name    | age  | model1 | model2 | sem  | otherevents |
++------+---------+------+--------+--------+------+-------------+
+|    1 | vasu    |   19 |     99 |     98 |   99 | singing     |
+|    2 | roman   |   22 |     98 |     76 |   45 | none        |
+|    3 | sinchan |   20 |     86 |     88 |   89 | coding      |
+|    4 | doremon |   34 |     76 |     56 |   34 | dancing     |
+|    5 | pinky   |   19 |     99 |     98 |   99 | none        |
++------+---------+------+--------+--------+------+-------------+
