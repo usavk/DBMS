@@ -1,0 +1,54 @@
+ 
+ experiment 14:
+1).
+
+
++------+------------+---------------+---------+---------+
+| id   | First_Name | Date_Of_Birth | Place   | Country |
++------+------------+---------------+---------+---------+
+|    2 | vasu       | 2003-11-27    | ap      | india   |
+|    3 | joe        | 2007-10-24    | newyork | us      |
+|    4 | roman      | 1993-04-13    | chiichu | china   |
+|    5 | zoo        | 1987-04-02    | roe     | russia  |
+|    6 | boo        | 2003-02-12    | fame    | spain   |
+|    7 | doo        | 2009-03-03    | rety    | ee3frf  |
++------+------------+---------------+---------+---------+
+
+a).
+ 
+create user 'vasu'@'localhost' identified by 'vasu123';
+mysql> grant all on pla to 'vasu'@'localhost';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show grants for 'vasu'@'localhost';
++-------------------------------------------------------------+
+| Grants for vasu@localhost                                   |
++-------------------------------------------------------------+
+| GRANT USAGE ON *.* TO `vasu`@`localhost`                    |
+| GRANT ALL PRIVILEGES ON `dataa`.`pla` TO `vasu`@`localhost` |
++-------------------------------------------------------------+
+
+REVOKE:
+
+2).
+
++-------------------------------------------------------------+
+| Grants for vasu@localhost                                   |
++-------------------------------------------------------------+
+| GRANT USAGE ON *.* TO `vasu`@`localhost`                    |
+| GRANT ALL PRIVILEGES ON `dataa`.`pla` TO `vasu`@`localhost` |
++-------------------------------------------------------------+
+
+
+
+a).
+mysql> revoke select on pla from 'vasu'@'localhost';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>  show grants for 'vasu'@'localhost';
++----------------------------------------------------------------------------------------------------------------------------------------------+
+| Grants for vasu@localhost                                                                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO `vasu`@`localhost`                                                                                                     |
+| GRANT INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE VIEW, SHOW VIEW, TRIGGER ON `dataa`.`pla` TO `vasu`@`localhost` |
++-----------------------------------------------------------------------------------------------------------------------
