@@ -1,0 +1,35 @@
+experiment 23:
+
+a).
+
+mysql>
+mysql> create table hosp(sno int(2),doctorname char(20),healthcases char(20),costfortreatment int(6),stateofoperation char(10));
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+mysql>  insert into hosp values(1,'chinchan','heartdisease',200000,'success');
+Query OK, 1 row affected (0.01 sec)
+mysql> insert into hosp values(2,'chiichoo','liverdisease',150000,'ntsuccess');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into hosp values(3,'chaachaa','thyroid',12000,'success');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into hosp values(4,'chaaaaaa','brainstroke',29999,'ntsuccess');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into hosp values(5,'chooo','chemo',399999,'success');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into hosp values(6,'chuuuu','cancer',349999,'success');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from hosp;
++------+------------+--------------+------------------+------------------+
+| sno  | doctorname | healthcases  | costfortreatment | stateofoperation |
++------+------------+--------------+------------------+------------------+
+|    1 | chinchan   | heartdisease |           200000 | success          |
+|    2 | chiichoo   | liverdisease |           150000 | ntsuccess        |
+|    3 | chaachaa   | thyroid      |            12000 | success          |
+|    4 | chaaaaaa   | brainstroke  |            29999 | ntsuccess        |
+|    5 | chooo      | chemo        |           399999 | success          |
+|    6 | chuuuu     | cancer       |           349999 | success          |
++------+------------+--------------+------------------+------------------+
