@@ -1,0 +1,27 @@
+
+experiment 11:
+
+mysql> use dataa;
+Database changed
+mysql> Delimiter //
+mysql> CREATE PROCEDURE While_Loop()
+    ->  BEGIN
+    ->  DECLARE A INT;
+    -> DECLARE XYZ Varchar(50);
+    -> SET A = 1;
+    -> SET XYZ = '';
+    -> WHILE A <=10 DO
+    -> SET XYZ = CONCAT(XYZ,A,',');
+    -> SET A = A + 1;
+    -> END WHILE;
+    -> SELECT XYZ;
+    -> END //
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> DELIMITER ;
+mysql> call While_Loop();
++-----------------------+
+| XYZ                   |
++-----------------------+
+| 1,2,3,4,5,6,7,8,9,10, |
++-----------------------+
