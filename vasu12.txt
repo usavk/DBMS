@@ -1,0 +1,29 @@
+
+experiment 12:
+
+mysql> DELIMITER $$
+mysql>
+mysql> CREATE PROCEDURE RepeatSample()
+    -> BEGIN
+    ->     DECLARE counter INT DEFAULT 1;
+    ->     DECLARE result VARCHAR(100) DEFAULT '';
+    ->
+    ->     REPEAT
+    ->         SET result = CONCAT(result,counter,',');
+    ->         SET counter = counter + 1;
+    ->    SET counter = counter + 1;
+    ->     END REPEAT;
+    ->
+    ->     -- display result
+    ->     SELECT result;
+    -> END$$
+Query OK, 0 rows affected (0.05 sec)
+
+mysql>
+mysql> DELIMITER ;
+mysql> CALL RepeatSample();
++--------------------+
+| result             |
++--------------------+
+| 1,2,3,4,5,6,7,8,9, |
++--------------------+
