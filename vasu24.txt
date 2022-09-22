@@ -1,0 +1,32 @@
+   experiment 24:
+
+1a).
+
+mysql> create table carrent(sno int(2),carname char(10),modelname char(10),numplate int(10),cusname char(10),cusmobileno int(11),fee int(4));
+Query OK, 0 rows affected, 4 warnings (0.02 sec)
+
+mysql> insert into carrent values(1,'audi','xxvd',1234,'vasu',928374652,2000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into carrent values(2,'wolswagen','ww6',4321,'joe',923746543,3000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into carrent values(3,'bugatti','x001',4532,'cane',92837463,4000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  insert into carrent values(4,'toyoto','fortuner',9876,'roman',92647547,5000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into carrent values(5,'tata','nano',3411,'sew',92837463,1000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from carrent;
++------+-----------+-----------+----------+---------+-------------+------+
+| sno  | carname   | modelname | numplate | cusname | cusmobileno | fee  |
++------+-----------+-----------+----------+---------+-------------+------+
+|    1 | audi      | xxvd      |     1234 | vasu    |   928374652 | 2000 |
+|    2 | wolswagen | ww6       |     4321 | joe     |   923746543 | 3000 |
+|    3 | bugatti   | x001      |     4532 | cane    |    92837463 | 4000 |
+|    4 | toyoto    | fortuner  |     9876 | roman   |    92647547 | 5000 |
+|    5 | tata      | nano      |     3411 | sew     |    92837463 | 1000 |
++------+-----------+-----------+----------+---------+-------------+------+
