@@ -1,0 +1,32 @@
+
+experiment 22:
+
+a).
+
+mysql> use vasu;
+Database changed
+mysql> create table bookpub(sno int(2),bookname char(10),noofpages int(3),author char(10),cost int(3));
+Query OK, 0 rows affected, 3 warnings (0.05 sec)
+
+mysql> insert into bookpub values(1,'happylife',120,'vasu',999);
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into bookpub values(2,'sports',50,'messi',499);
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  insert into bookpub values(3,'wrestling',200,'rock',399);
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into bookpub values(4,'jam jam',20,'joe',299);
+Query OK, 1 row affected (0.01 sec)
+mysql> select*from bookpub;
+
+
++------+-----------+-----------+--------+------+
+| sno  | bookname  | noofpages | author | cost |
++------+-----------+-----------+--------+------+
+|    1 | happylife |       120 | vasu   |  999 |
+|    2 | sports    |        50 | messi  |  499 |
+|    3 | wrestling |       200 | rock   |  399 |
+|    4 | jam jam   |        20 | joe    |  299 |
++------+-----------+-----------+--------+------+
